@@ -1,0 +1,31 @@
+<div class=" flex felx-col items-center px-40 mt-10">
+   @if(isEdit){
+    <h1>Update category</h1>
+   }@else{ 
+    <h1>Add New category</h1>
+    }
+    <form class="shadow-sm w-96 p-4"> 
+
+        <div class="flex flex-wrap">
+            <div class="w-full gap-4">
+                
+                <mat-form-field class="w-full">
+                    <mat-label>Name</mat-label>
+                    <input matInput type="text" [(ngModel)]="name" name="name">
+                </mat-form-field>
+            </div>
+            <div class="w-full felx justify-center">
+                @if(isEdit){
+                    <button mat-raised-button color="primary" [disabled]="!name" (click)="Update()" type="button">Update</button>
+
+                    
+                   }@else{ 
+                    <button mat-raised-button color="primary" [disabled]="!name" (click)="Add()" type="button">Add</button>
+
+                    }
+                
+                
+            </div>
+        </div>
+    </form>
+</div>
